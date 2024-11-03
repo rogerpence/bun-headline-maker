@@ -1,6 +1,6 @@
 # News ticker-like text display
 
-Bun's home page has an interesting feature that displays an array of strings one at a time, with a teletype-like effect. This Svelte app shows a way to replicate that special effect.
+[Bun's home page ](https://bun.sh/) has an interesting feature that displays an array of strings one at a time, with a teletype-like effect. This Svelte app shows a way to replicate that special effect.
 
 ![](https://nyc3.digitaloceanspaces.com/asna-assets/images/ezgif.com-optimize.gif)
 
