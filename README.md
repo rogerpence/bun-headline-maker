@@ -22,7 +22,9 @@ This Svelte 5 project provides BunHeadline.svelte component that encapsulates di
 </script>
 
 <div class="m-4">
-    <p class="text-lg"><a class="underline underline-offset-2 decoration=1" href="https://bun.sh/">Bun's home page</a> has an interesting feature that displays an array of strings one at a time, with a teletype-like effect. This Svelte app shows a way to replicate that special effect.</p>
+    <p class="text-lg"><a class="underline underline-offset-2 decoration=1" href="https://bun.sh/">Bun's home 
+    page</a> has an interesting feature that displays an array of strings one at a time, with a 
+    ticker-tape effect. This Svelte app shows a way to replicate that special effect.</p>
     
     <div class="text-3xl mt-5">
         <div>ASNA Monarch is a .NET migration suite that</div>        
@@ -30,3 +32,7 @@ This Svelte 5 project provides BunHeadline.svelte component that encapsulates di
     </div>
 </div>
 ```
+
+Although this is a Svelte 5 project it currently uses Svelte 4 syntax (because this was written for a Svelte 4 project).
+
+The `BunHeader.ts` file has a TypeScript class that does all the heavy lifting for the text display. 
