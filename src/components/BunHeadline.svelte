@@ -20,25 +20,18 @@
     function showTypingText() {
         setTimeout(() => {
             bh.processStrings(strings);        
-        }, stringPause);
+        }, DELAY_BEFORE_EFFECT_START);
     }
     
-    let scrollingText = '';
+    export let strings: string[] = [];
 
-    const strings = ["includes both the RPG and CL",
-    "targets RPG for .NET or C#", 
-    "uses your IBM i database",
-    "or migrates your IBM i database to SQL Server",
-    "migrates 99% of your code automatically", 
-    "migrates your enterprise RPG applications to .NET"];
-    
+    let scrollingText = '';
+   
     const MILLISECONDS_TO_PAUSE_BETWEEN_CHARACTERS = 15;
     const MILLISECONDS_TO_SHOW_FULL_TEXT = 4000;
+    const DELAY_BEFORE_EFFECT_START = 5000;
 
-    const characterPause = MILLISECONDS_TO_PAUSE_BETWEEN_CHARACTERS;
-    const stringPause = MILLISECONDS_TO_SHOW_FULL_TEXT
-    
-    const bh = new BunHeader(setStringToShow, characterPause, stringPause);
+    const bh = new BunHeader(setStringToShow, MILLISECONDS_TO_PAUSE_BETWEEN_CHARACTERS, MILLISECONDS_TO_SHOW_FULL_TEXT);
     
     let cursorVisibility = 'visible';
    
@@ -50,21 +43,5 @@
 
 </script>
 
-<p><a href="https://bun.sh/">Bun's home page</a> has a great feature that replaces text with a teletype-like effect. This Svelte app shows a way to replicate that special effect.</p>
+<div class="scrolling-text">{scrollingText}<span style="visibility:{cursorVisibility};">|</span></div>
 
-<div class="main">
-    <div>ASNA Monarch is a .NET migration suite that</div>
-    <div class="scrolling-text">{scrollingText}<span style="visibility:{cursorVisibility};">|</span></div>
-</div>
-
-<style>
-    p {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-        max-width: 800px;
-    }
-    div.main {
-        font-size: 2rem;        
-    }
-
-</style>

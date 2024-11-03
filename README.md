@@ -1,38 +1,32 @@
-# sv
+# News ticker-like text display
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Bun's home page has an interesting feature that displays an array of strings one at a time, with a teletype-like effect. This Svelte app shows a way to replicate that special effect.
 
-## Creating a project
+![](https://nyc3.digitaloceanspaces.com/asna-assets/images/ezgif.com-optimize.gif)
 
-If you're seeing this, you've probably already done this step. Congrats!
+(The GIF is a little choppy, the actual display is very smooth.)
 
-```bash
-# create a new project in the current directory
-npx sv create
+This Svelte 5 project provides BunHeadline.svelte component that encapsulates displaying the teletype text. 
 
-# create a new project in my-app
-npx sv create my-app
+
+```js
+<script lang="ts">
+    import BunHeadline from '../components/BunHeadline.svelte';
+
+    const strings = ["includes both the RPG and CL",
+    "targets RPG for .NET or C#", 
+    "uses your IBM i database",
+    "or migrates your IBM i database to SQL Server",
+    "migrates 99% of your code automatically", 
+    "migrates your enterprise RPG applications to .NET"];
+</script>
+
+<div class="m-4">
+    <p class="text-lg"><a class="underline underline-offset-2 decoration=1" href="https://bun.sh/">Bun's home page</a> has an interesting feature that displays an array of strings one at a time, with a teletype-like effect. This Svelte app shows a way to replicate that special effect.</p>
+    
+    <div class="text-3xl mt-5">
+        <div>ASNA Monarch is a .NET migration suite that</div>        
+        <BunHeadline {strings}/>
+    </div>
+</div>
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
